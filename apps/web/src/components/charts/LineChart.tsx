@@ -1,8 +1,8 @@
 'use client'
 
 import { LineChart as RechartsLineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from 'recharts'
-import { ChartData } from '@/types'
-import { formatNumber, formatDate, generateColors } from '@/lib/utils'
+import { ChartData } from '../../types'
+import { formatNumber, formatDate, generateColors } from '../../lib/utils'
 
 interface LineChartProps {
   data: ChartData[]

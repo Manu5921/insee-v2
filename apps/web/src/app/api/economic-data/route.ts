@@ -1,6 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server'
-import { fetchAllEconomicData } from '@/lib/api-clients'
-import { createServerSupabaseClient } from '@/lib/supabase'
+import { fetchAllEconomicData } from '../../../lib/api-clients'
+import { createServerSupabaseClient } from '../../../lib/supabase'
 
 export async function GET(request: NextRequest) {
   try {

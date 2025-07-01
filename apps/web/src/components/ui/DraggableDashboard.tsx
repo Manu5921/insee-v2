@@ -4,7 +4,7 @@ import { useState, useMemo } from 'react'
 import { Responsive, WidthProvider, Layout } from 'react-grid-layout'
 import { Card } from './Card'
 import { Button } from './Button'
-import { cn } from '@/lib/utils'
+import { cn } from '../../lib/utils'
 import {
   GripVerticalIcon,
   PlusIcon,

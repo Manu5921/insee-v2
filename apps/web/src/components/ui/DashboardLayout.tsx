@@ -1,7 +1,7 @@
 'use client'
 
 import { useState, ReactNode, useRef, useEffect } from 'react'
-import { cn } from '@/lib/utils'
+import { cn } from '../../lib/utils'
 import { ThemeToggle } from './ThemeToggle'
 import { Button } from './Button'
 import {

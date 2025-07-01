@@ -1,5 +1,5 @@
 import axios from 'axios'
-import { EconomicData, INSEEDataset, INSEEObservation, EurostatDataset } from '@/types'
+import { EconomicData, INSEEDataset, INSEEObservation, EurostatDataset } from '../types'
 
 // Configuration des clients API
 const INSEE_BASE_URL = 'https://api.insee.fr/series/BDM/V1'

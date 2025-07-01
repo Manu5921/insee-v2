@@ -1,9 +1,9 @@
 'use client'
 
 import { useState, useRef, useEffect } from 'react'
-import { Button } from '@/components/ui/Button'
-import { Card } from '@/components/ui/Card'
-import { cn } from '@/lib/utils'
+import { Button } from './ui/Button'
+import { Card } from './ui/Card'
+import { cn } from '../lib/utils'
 import { 
   MessageSquareIcon, 
   SendIcon, 

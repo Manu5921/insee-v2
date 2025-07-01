@@ -1,8 +1,8 @@
 'use client'
 
 import { BarChart as RechartsBarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from 'recharts'
-import { ChartData } from '@/types'
-import { formatNumber, formatDate, generateColors } from '@/lib/utils'
+import { ChartData } from '../../types'
+import { formatNumber, formatDate, generateColors } from '../../lib/utils'
 
 interface BarChartProps {
   data: ChartData[]

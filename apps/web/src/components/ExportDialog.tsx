@@ -1,10 +1,10 @@
 'use client'
 
 import { useState } from 'react'
-import { Button } from '@/components/ui/Button'
-import { Card } from '@/components/ui/Card'
-import { ExportOptions, EconomicData } from '@/types'
-import ExportManager from '@/lib/export-utils'
+import { Button } from './ui/Button'
+import { Card } from './ui/Card'
+import { ExportOptions, EconomicData } from '../types'
+import ExportManager from '../lib/export-utils'
 import { 
   DownloadIcon, 
   FileTextIcon, 
@@ -187,10 +187,10 @@ export function ExportDialog({
                 <label className="block text-xs text-gray-500 mb-1">Du</label>
                 <input
                   type="date"
-                  value={exportOptions.dateRange.start}
+                  value={exportOptions.dateRange?.start || ''}
                   onChange={(e) => setExportOptions(prev => ({
                     ...prev,
-                    dateRange: { ...prev.dateRange, start: e.target.value }
+                    dateRange: { start: e.target.value, end: prev.dateRange?.end || '' }
                   }))}
                   className="w-full px-3 py-2 border border-gray-300 rounded-md text-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
                 />
@@ -199,10 +199,10 @@ export function ExportDialog({
                 <label className="block text-xs text-gray-500 mb-1">Au</label>
                 <input
                   type="date"
-                  value={exportOptions.dateRange.end}
+                  value={exportOptions.dateRange?.end || ''}
                   onChange={(e) => setExportOptions(prev => ({
                     ...prev,
-                    dateRange: { ...prev.dateRange, end: e.target.value }
+                    dateRange: { start: prev.dateRange?.start || '', end: e.target.value }
                   }))}
                   className="w-full px-3 py-2 border border-gray-300 rounded-md text-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
                 />
@@ -220,8 +220,8 @@ export function ExportDialog({
               <div>Format: <span className="font-medium">{exportOptions.format}</span></div>
               <div>Données: <span className="font-medium">{filteredDataCount}</span> enregistrements</div>
               <div>Période: <span className="font-medium">
-                {new Date(exportOptions.dateRange.start).toLocaleDateString('fr-FR')} - {' '}
-                {new Date(exportOptions.dateRange.end).toLocaleDateString('fr-FR')}
+                {exportOptions.dateRange?.start ? new Date(exportOptions.dateRange.start).toLocaleDateString('fr-FR') : ''} - {' '}
+                {exportOptions.dateRange?.end ? new Date(exportOptions.dateRange.end).toLocaleDateString('fr-FR') : ''}
               </span></div>
               {exportOptions.format === 'PDF' && exportOptions.includeCharts && (
                 <div>Graphiques: <span className="font-medium">{chartElements.length}</span> inclus</div>
@@ -284,6 +284,8 @@ function filterDataByOptions(data: EconomicData[], options: ExportOptions): Econ
   return data.filter(item => {
     // Filtrage par date
     const itemDate = new Date(item.date)
+    if (!options.dateRange?.start || !options.dateRange?.end) return true
+    
     const startDate = new Date(options.dateRange.start)
     const endDate = new Date(options.dateRange.end)
     

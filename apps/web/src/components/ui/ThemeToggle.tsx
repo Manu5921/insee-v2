@@ -7,7 +7,7 @@ import {
   MoonIcon, 
   Monitor 
 } from 'lucide-react'
-import { cn } from '@/lib/utils'
+import { cn } from '../../lib/utils'
 
 interface ThemeToggleProps {
   variant?: 'button' | 'dropdown' | 'switcher'

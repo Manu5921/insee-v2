@@ -1,7 +1,7 @@
 import jsPDF from 'jspdf'
 import html2canvas from 'html2canvas'
-import { EconomicData, ExportOptions } from '@/types'
-import { formatNumber, formatDate, downloadFile } from '@/lib/utils'
+import { EconomicData, ExportOptions } from '../types'
+import { formatNumber, formatDate, downloadFile } from './utils'
 
 export class ExportManager {
   

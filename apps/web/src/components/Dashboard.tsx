@@ -1,14 +1,14 @@
 'use client'
 
 import { useState, useEffect, useRef } from 'react'
-import { EconomicData, DashboardConfig, EconomicCategory } from '@/types'
-import { Card, StatCard } from '@/components/ui/Card'
-import { Button } from '@/components/ui/Button'
-import { LineChart } from '@/components/charts/LineChart'
-import { BarChart } from '@/components/charts/BarChart'
-import { ChatBot } from '@/components/ChatBot'
-import { ExportDialog } from '@/components/ExportDialog'
-import { formatNumber, formatPercentage } from '@/lib/utils'
+import { EconomicData, DashboardConfig, EconomicCategory } from '../types'
+import { Card, StatCard } from './ui/Card'
+import { Button } from './ui/Button'
+import { LineChart } from './charts/LineChart'
+import { BarChart } from './charts/BarChart'
+import { ChatBot } from './ChatBot'
+import { ExportDialog } from './ExportDialog'
+import { formatNumber, formatPercentage } from '../lib/utils'
 import { 
   TrendingUpIcon, 
   TrendingDownIcon, 

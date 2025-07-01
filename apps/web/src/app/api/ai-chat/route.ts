@@ -1,6 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server'
-import { economicAnalyzer } from '@/lib/openai-client'
-import { createServerSupabaseClient } from '@/lib/supabase'
+import { economicAnalyzer } from '../../../lib/openai-client'
+import { createServerSupabaseClient } from '../../../lib/supabase'
 
 export async function POST(request: NextRequest) {
   try {
